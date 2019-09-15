@@ -7,7 +7,7 @@
     "url": "https://praveenpuglia.com"
   },
   "main": "./dist/vuetify-daterange-picker.common.js",
-  "repository": "https://github.com/praveenpuglia/vuetify-daterange-picker",
+  "repository": "https://github.com/NizamSaidin/vuetify-daterange-picker",
   "license": "MIT",
   "scripts": {
     "serve": "vue-cli-service serve",
