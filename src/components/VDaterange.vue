@@ -1,11 +1,6 @@
 <template>
   <div class="v-date-range">
-    <v-menu
-      v-model="menu"
-      :close-on-content-click="false"
-      offset-y
-      v-bind="menuProps"
-    >
+    <v-menu v-model="menu" :close-on-content-click="false" offset-y v-bind="menuProps">
       <v-text-field
         slot="activator"
         class="v-date-range__input-field"
@@ -37,9 +32,7 @@
                     :key="index"
                     @click="selectPreset(index)"
                   >
-                    <v-list-tile-content>
-                      {{ preset.label }}
-                    </v-list-tile-content>
+                    <v-list-tile-content>{{ preset.label }}</v-list-tile-content>
                   </v-list-tile>
                 </v-list>
                 <v-date-picker
@@ -76,9 +69,7 @@
           <v-spacer></v-spacer>
           <v-btn flat @click="reset">Reset</v-btn>
           <v-btn flat @click="menu = false">Cancel</v-btn>
-          <v-btn @click="applyRange" color="primary" :disabled="!bothSelected"
-            >Apply</v-btn
-          >
+          <v-btn @click="applyRange" color="primary" :disabled="!bothSelected">Apply</v-btn>
         </v-card-actions>
       </v-card>
     </v-menu>
@@ -86,7 +77,7 @@
 </template>
 <script>
 import { format, parse, differenceInCalendarDays, addDays } from 'date-fns';
-const isoFormat = 'YYYY-MM-DD';
+const isoFormat = 'dddd-MM-yy';
 const defaultDate = format(new Date(), isoFormat);
 
 export default {
